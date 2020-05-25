@@ -41,6 +41,7 @@ public class Trie {
 
         // See if temp has the child with letter 'charArray[index]'(current index letter)
         tn = temp.children[charArray[index] - 'A'];
+        if (tn != null) index++;
 
         // if the character node exists as a child (keep going)
         while (tn != null && index < charArray.length) {
@@ -62,7 +63,7 @@ public class Trie {
     }
 
     public String[] wordsByPrefix(String prefix) {
-        List<String> resultArray = new ArrayList<>();
+//        List<String> resultArray = new ArrayList<>();
 
         // input validation.
         if (prefix.equals("")) {
